@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pramod Reddy Pandiri Student</title>
+    <link rel="stylesheet" href="https://waph-uc.github.io/style3.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        
+        body{
+            box-sizing: border-box;
+            width: 100%;
+           
+        }
+        button{
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            background-color:#4CAF50;
+            color: white;
+            cursor: pointer;
+            
+
+        }
+        input{
+            border-color: black;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+        /* Your CSS styles for input of type submit */
+        background-color: #4caf50;
+        color: white;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="details" style="background-color:#4CAF50;">
+            <div id="course-details">
+                <h1 style="color: #ffffff;">Web Application Programming</h1>
+                <h2 style="color: #ffffff;">Front-end Web Development Lab</h2>
+                <h3 style="color: #ffffff;">Instructor: Dr. Phu Phung</h3>
+            </div>
+            <div id="student-intro">
+                <h3>Student: Pramod Reddy Pandiri</h3>
+                <img height='150' width='150' src="../Images/pic.jpeg"/>
+            </div>
+        </div>
+        <div id="clock">
+            <h3>Digital Clock:</h3>
+            <div id="digital_clock">
+                
+                
+            </div>
+            <h3>Date: </h3>
+            <div style="cursor: pointer; text-decoration: underline; color: blue;" id="click_to_see_time" onclick="document.getElementById('click_to_see_time').innerHTML= new Date()">
+                Click Here to See Date
+            </div>
+            
+            <h3>Analog Clock: </h3>
+            <canvas id="analog_clock" width="150" height="150" style="background-color: black">
+
+            </canvas>
+            <script src="https://waph-uc.github.io/clock.js"></script>
+        </div>
+        <script type="text/javascript">
+            function displayTime(){
+                document.getElementById('digital_clock').innerHTML="Current Time: " + new Date()
+            }
+            setInterval(displayTime,500);
+            //code for analog clock
+            var canvas = document.getElementById('analog_clock');
+            var ctx = canvas.getContext('2d');
+            var radius = canvas.height/2;
+            ctx.translate(radius, radius);
+            radius = radius * 0.90
+            setInterval(drawClock,1000);
+            function drawClock(){
+                drawFace(ctx, radius)
+                drawNumbers(ctx,radius)
+                drawTime(ctx, radius)
+            }
+        </script>
+        <div id="simple_form" class="simple_form">
+            <h3>Simple HTML Page with form:</h3>
+            <i>Form the HTTP GET Request</i>
+            <form style="padding: 10px;" id="get_request" action="/echo.php" method="GET">
+                <span>Your Input: </span><input style="padding: 3px;" name="data"/>
+                <input type='submit' value="Submit"/>
+
+            </form>
+            <i>Form the HTTP Post Request</i>
+            <form style="padding: 10px;" action="/echo.php" method="POST" name="echo_post" id="post_request">
+                Your Input: <input style="padding: 3px;" name="data" onkeypress='console.log("You pressed a key")' >
+                <input type="submit" value="Submit"/>
+
+            </form>
+        </div>
+        <div id="show_hide_email" style="cursor: pointer; text-decoration: underline; color: blue;" onclick="show_or_hide_email()">
+            Click here to see my email 
+        </div>
+        <div style="padding: 10px;" id="ajax">
+            <i> Ajax Get Request</i><br>
+            Please type your input: <br>
+            <input style="padding: 3px;" id = 'data' name="data" onkeypress="console.log('Key pressesed')"/>
+            <div id="ajax_jquery" style="padding-top: 5px;display: flex; flex-direction: row ; gap: 10px;">
+                <button type="submit" onclick="getEcho()">Ajax Echo</button>
+                <button type="submit" onclick="ajaxJqueryGet()">Ajax jQuery GET</button>
+                <button type="submit" onclick="ajaxJqueryPost()">Ajax jQuery POST</button>
+            </div>
+            
+            <!-- <h3>Response:</h3> -->
+            <div id="responseMessage" style="background-color: #4CAF50; margin-top: 5px;">
+                
+            </div>
+        </div>
+        <div id="web-service">
+            <h2> Intergrating External Web API</h2>
+            <h3>Reload to see new joke about Programming.</h3>
+            <div id="jokeContainer">
+
+            </div>
+            <div id="age_guess">
+                <input placeholder="Enter Name" id='name' name="name" type="text"  />
+                <button type="submit" onclick='guessAge($("#name").val())'>Guess Age</button>
+                <div id="guess_response">
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div height='200' width='200'>
+            <p>Place holder</p>
+            <p>Place holder</p>
+            <p>Place holder</p>
+            <p>Place holder</p>
+            <p>Place holder</p>
+            <p>Place holder</p>
+        </div>
+        
+    </div>
+    
+
+    <script src="email.js"></script>
+    <script type="text/javascript">
+        function getEcho(){
+            console.log("getEcho called")
+            data_ele = document.getElementById('data');
+            console.log(data_ele);
+            console.log(data_ele.value);
+            data = data_ele.value;
+            if (data !==''){
+                var new_req = new XMLHttpRequest();
+                new_req.onreadystatechange = function(){
+                    alert(this.readyState)
+                    if (this.readyState === 4 && this.status === 200) {
+            
+            document.getElementById('responseMessage').innerHTML = 'Server Response: ' + this.responseText;
+          }
+                }
+                new_req.open('GET', 'echo.php?data='+data, true);
+                new_req.send();
+                data_ele.value = ''
+            }
+
+
+        }
+        function ajaxJqueryGet(){
+            console.log("ajaxJqueryGet");
+            var data = $('#data').val();
+            console.log(data);
+            if (data.length == 0){
+                return
+            }
+            $.get('echo.php?data='+data, function(result){
+                $('#responseMessage').html('Response from Ajax request using jQuery:'+ result)
+            });
+            $('#data').val('');
+
+        }
+            function ajaxJqueryPost() {
+        console.log("ajaxJqueryPost");
+
+        
+        var data = $('#data').val();
+        console.log(data);
+
+        
+        if (data.length === 0) {
+            return;
+        }
+
+        
+        $.post('echo.php', { data: data }, function(result) {
+            
+            $('#responseMessage').html('Response from Ajax POST request using jQuery: ' + result);
+        });
+
+        
+        $('#data').val('');
+    }
+    $(document).ready(function() {
+            // Make an AJAX GET request on page load
+            $.get('https://v2.jokeapi.dev/joke/Programming?type=single', function(result) {
+                // Handle the response
+                $('#jokeContainer').html('Joke: ' + result.joke);
+            });
+        });
+        async function guessAge(name){
+            const response = await fetch("https://api.agify.io/?name="+name)
+            const result = await response.json();
+            $('#guess_response').html("Hi "+ " your age is " + result.age)
+        }
+    
+
+
+    </script>
+</body>
+</html>
