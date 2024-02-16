@@ -66,42 +66,42 @@
 
     </div>
     <script>
-       // Fetch Weather Data
-//     fetch('https://api.weatherbit.io/v2.0/current?city=Cincinnati&key=77d23fcb983748e6a7ead6e8ebf34531')
-//     .then(response => response.json())
-//     .then(data => {
-//         const weatherData = {
-//         labels: ['Temperature', 'Feels Like', 'Wind Speed'],
-//         datasets: [{
-//             label: '',
-//             data: [data.data[0].temp, data.data[0].app_temp, data.data[0].wind_spd],
-//             backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-//             borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
-//             borderWidth: 1
-//         }]
-//         };
+     //  Fetch Weather Data
+    fetch('https://api.weatherbit.io/v2.0/current?city=Cincinnati&key=77d23fcb983748e6a7ead6e8ebf34531')
+    .then(response => response.json())
+    .then(data => {
+        const weatherData = {
+        labels: ['Temperature', 'Feels Like', 'Wind Speed'],
+        datasets: [{
+            label: '',
+            data: [data.data[0].temp, data.data[0].app_temp, data.data[0].wind_spd],
+            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
+            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
+            borderWidth: 1
+        }]
+        };
 
-//     const weatherChart = new Chart(document.getElementById('weather-chart'), {
-//       type: 'bar',
-//       data: weatherData,
-//       options: {
-//         scales: {
-//           y: {
-//             beginAtZero: true
-//           }
-//         }
-//       }
-//     });
-//   });
-  // Make an AJAX GET request on page load
+    const weatherChart = new Chart(document.getElementById('weather-chart'), {
+      type: 'bar',
+      data: weatherData,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  });
+ // Make an AJAX GET request on page load
 
-//   setInterval(function(){
-//     $.get('https://v2.jokeapi.dev/joke/Programming,Dark,Spooky?blacklistFlags=religious,racist,sexist&type=twopart', function(result) {
-//                 // Handle the response
-//                 $('#jokeContainer').html('Set Up: ' + result.setup +" <br> Delivery : "+ result.delivery);
-//             });
+  setInterval(function(){
+    $.get('https://v2.jokeapi.dev/joke/Programming,Dark,Spooky?blacklistFlags=religious,racist,sexist&type=twopart', function(result) {
+                // Handle the response
+                $('#jokeContainer').html('Set Up: ' + result.setup +" <br> Delivery : "+ result.delivery);
+            });
 
-//   }, 60000)
+  }, 60000)
   function sumAsciiValues() {
             var inputString = document.getElementById("inputString").value;
             var asciiSum = 0;
@@ -132,12 +132,12 @@
                 var xCenter = canvas.width / 2;
                 var yCenter = canvas.height / 2;
                 var radius = canvas.width / 2 - 10;
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.beginPath();
-                ctx.arc(xCenter, yCenter, radius, 0, 2 * Math.PI);
-                ctx.lineWidth = 10;
-                ctx.strokeStyle = '#E65100';
-                ctx.stroke();
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+                context.arc(xCenter, yCenter, radius, 0, 2 * Math.PI);
+                context.lineWidth = 10;
+                context.strokeStyle = '#E65100';
+                context.stroke();
                 var hour = now.getHours() % 12;
                 var minute = now.getMinutes();
                 var second = now.getSeconds();
@@ -147,7 +147,7 @@
                 // Hour hand
                 context.beginPath();
                 context.moveTo(xCenter, yCenter);
-                context.lineTo(xCenter + Math.cos(hourAngle) * (radius * 0.5), centerY + Math.sin(hourAngle) * (radius * 0.5));
+                context.lineTo(xCenter + Math.cos(hourAngle) * (radius * 0.5), yCenter + Math.sin(hourAngle) * (radius * 0.5));
                 context.lineWidth = 6;
                 context.strokeStyle = '#000000';
                 context.stroke();
