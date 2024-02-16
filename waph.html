@@ -66,7 +66,7 @@
 
     </div>
     <script>
-        // Fetch Weather Data
+       // Fetch Weather Data
 //     fetch('https://api.weatherbit.io/v2.0/current?city=Cincinnati&key=77d23fcb983748e6a7ead6e8ebf34531')
 //     .then(response => response.json())
 //     .then(data => {
@@ -94,13 +94,14 @@
 //     });
 //   });
   // Make an AJAX GET request on page load
-  $(document).ready(function(){
-    $.get('https://v2.jokeapi.dev/joke/Programming,Dark,Spooky?blacklistFlags=religious,racist,sexist&type=twopart', function(result) {
-                // Handle the response
-                $('#jokeContainer').html('Set Up: ' + result.setup +" <br> Delivery : "+ result.delivery);
-            });
 
-  }) 
+//   setInterval(function(){
+//     $.get('https://v2.jokeapi.dev/joke/Programming,Dark,Spooky?blacklistFlags=religious,racist,sexist&type=twopart', function(result) {
+//                 // Handle the response
+//                 $('#jokeContainer').html('Set Up: ' + result.setup +" <br> Delivery : "+ result.delivery);
+//             });
+
+//   }, 60000)
   function sumAsciiValues() {
             var inputString = document.getElementById("inputString").value;
             var asciiSum = 0;
@@ -124,16 +125,16 @@
 
             
         });
-        function updateAnalogClock() {
+        function AnalogClock() {
                 var now = new Date();
                 var canvas = document.getElementById('analog-clock');
-                var ctx = canvas.getContext('2d');
-                var centerX = canvas.width / 2;
-                var centerY = canvas.height / 2;
+                var context = canvas.getContext('2d');
+                var xCenter = canvas.width / 2;
+                var yCenter = canvas.height / 2;
                 var radius = canvas.width / 2 - 10;
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.beginPath();
-                ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+                ctx.arc(xCenter, yCenter, radius, 0, 2 * Math.PI);
                 ctx.lineWidth = 10;
                 ctx.strokeStyle = '#E65100';
                 ctx.stroke();
@@ -144,29 +145,29 @@
                 var minuteAngle = (minute + second / 60) * 6 * Math.PI / 180;
                 var secondAngle = second * 6 * Math.PI / 180;
                 // Hour hand
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(centerX + Math.cos(hourAngle) * (radius * 0.5), centerY + Math.sin(hourAngle) * (radius * 0.5));
-                ctx.lineWidth = 6;
-                ctx.strokeStyle = '#000000';
-                ctx.stroke();
+                context.beginPath();
+                context.moveTo(xCenter, yCenter);
+                context.lineTo(xCenter + Math.cos(hourAngle) * (radius * 0.5), centerY + Math.sin(hourAngle) * (radius * 0.5));
+                context.lineWidth = 6;
+                context.strokeStyle = '#000000';
+                context.stroke();
                 // Minute hand
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(centerX + Math.cos(minuteAngle) * (radius * 0.7), centerY + Math.sin(minuteAngle) * (radius * 0.7));
-                ctx.lineWidth = 4;
-                ctx.strokeStyle = '#666';
-                ctx.stroke();
+                context.beginPath();
+                context.moveTo(xCenter, yCenter);
+                context.lineTo(xCenter + Math.cos(minuteAngle) * (radius * 0.7), yCenter + Math.sin(minuteAngle) * (radius * 0.7));
+                context.lineWidth = 4;
+                context.strokeStyle = '#666';
+                context.stroke();
                 // Second hand
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(centerX + Math.cos(secondAngle) * (radius * 0.9), centerY + Math.sin(secondAngle) * (radius * 0.9));
-                ctx.lineWidth = 2;
-                ctx.strokeStyle = 'red';
-                ctx.stroke();
+                context.beginPath();
+                context.moveTo(xCenter, yCenter);
+                context.lineTo(xCenter + Math.cos(secondAngle) * (radius * 0.9), yCenter + Math.sin(secondAngle) * (radius * 0.9));
+                context.lineWidth = 2;
+                context.strokeStyle = 'red';
+                context.stroke();
             }
-            updateAnalogClock(); // Initial call
-            setInterval(updateAnalogClock, 1000); // Update every second
+            AnalogClock(); 
+            setInterval(AnalogClock, 1000); 
         
 
         
