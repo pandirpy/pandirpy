@@ -26,6 +26,11 @@ A link to this course page ```https://github.com/pandirpy/pandirpy.github.io/wap
 <p class=""><a href="/waph.html" target="_blank"><span class="text-white">Course: </span><span class="text-blue-500">Web Programmong and Ethical Hacking.</span> </a></p>
                                 
 ```
+![Portfolio 1](/Images/tcs_1.png)
+
+
+![Portfolio 1](/Images/tcs_2.png)
+
 
 
 
@@ -59,7 +64,7 @@ I have used google analytics here. I have creadted tracking ```G-CSD4M1Q2W3``` I
             gtag('config', 'G-CSD4M1Q2W3');
             </script>
 ```
-
+![Google Analytics](/Images/google_analytics.png)
 
 ### Technical requirements (50 pts)​
 
@@ -295,3 +300,11 @@ function setCookie(name, value, days) {
         window.onload = displayWelcomeBanner;
         
 ```
+
+
+![Course page with Hands on Project -1](./Images/tcs_3.png)
+
+
+![Course page with Hands on Project-1](./Images/tcs_4.png)
+
+![Course page with Hands on Project-1](./Images/tcs_5.png)
