@@ -12,66 +12,20 @@
     
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <script>
-        // Function to set a cookie
-        function setCookie(cname, cvalue, exdays) {
-          const d = new Date();
-          d.setTime(d.getTime() + (exdays*24*60*60*1000));
-          let expires = "expires="+ d.toUTCString();
-          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-        
-        // Function to get a cookie
-        function getCookie(cname) {
-          let name = cname + "=";
-          let decodedCookie = decodeURIComponent(document.cookie);
-          let ca = decodedCookie.split(';');
-          for(let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') {
-              c = c.substring(1);
-            }
-            if (c.indexOf(name) === 0) {
-              return c.substring(name.length, c.length);
-            }
-          }
-          return "";
-        }
-        
-        // Function to check the cookie
-        // function checkCookie() {
-        //   let lastVisit = getCookie("lastvisit");
-        //   if (lastVisit !== "") {
-        //     alert("Welcome back! Your last visit was " + lastVisit);
-        //   } else {
-        //     alert("Welcome to my homepage!");
-        //   }
-        //   setCookie("lastvisit", new Date().toLocaleString(), 365);
-        // }
-        
-        //window.onload = checkCookie;
-        </script>
-      
-        <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ5E8FJVKZ"></script>
-            <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-HZ5E8FJVKZ');
-            </script>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clockpicker/dist/jquery-clockpicker.min.css">
+   
             
             
                 
 </head>
 <body>
     <div class="w-full container mx-auto flex flex-col items-center">
+        <div class="Course-intro text-center flex flex-col items-center justify-between my-5">
+            <p class="text-3xl font-bold">Welcome to Web Programming and Hacking course.</p>
+            <p class="text-2xl font-semibold">Hands on excercises in the course</p>
+        </div>
         <div class="text-bold text-2xl">Public API Integration</div>
         <div style="text-align:center;" class="w-8/12">
-                <h1>Weather API</h1>
+                <h1>Using a Weather API</h1>
                 <h3>Weather in Cincinnati</h3>
                 <canvas id="weather-chart" width="400" height="200"></canvas>
         </div>
@@ -98,9 +52,9 @@
         </div>
         <!-- <canvas id="analog-clock"></canvas> -->
         <div class="clocks flex flex-col items-center my-5 justify-between">
-            <h1 class="text-2xl">Digital Clock</h1>
+            <h1 class="text-2xl font-bold">Digital Clock (24hr format)</h1>
             <div class="my-3 py-3" id="digital-clock"></div>
-            <h1 class="text-2xl">Analog Clock</h1>
+            <h1 class="text-2xl font-bold">Analog Clock</h1>
             <canvas class="my-3 py-3" id="analog-clock" width="200" height="200"></canvas>
         </div>
         

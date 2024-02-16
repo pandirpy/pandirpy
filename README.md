@@ -1,16 +1,18 @@
-### Hi there 👋
+# Web Application Programming and Hacking
 
-<!--
-**pandirpy/pandirpy** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Instructor : Dr Phu Phung
 
-Here are some ideas to get you started:
+## Student
+**Name** : Pramod Reddy Pandiri
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+**Email** : pandirpy@mail.uc.edu
+
+**Short bio** : I am an ardent programmer, I am interesed in software development, Machine learning.
+
+![Headshot](/Images/pic.jpeg)
+
+# Individual Project 1
+
+This is project is about creating a pofessional portfolio including my eduaction, experience, job, skills and other details. you can view my portfolio at below provided link.
+[My Portfolio]()
+[Repositoy URL]()
