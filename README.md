@@ -9,7 +9,7 @@
 
 **Short bio** : I am an ardent programmer, I am interesed in software development, Machine learning.
 
-![Headshot](/Images/pic.jpeg)
+![Headshot](./Images/pic.jpeg)
 
 # Individual Project 1
 
